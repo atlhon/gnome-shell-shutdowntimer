@@ -8,4 +8,6 @@ Heavily based on Lukas Knuth's Backslide code at https://bitbucket.org/LukasKnut
 Known issues
 ------------
 
-The shutdown does not complete until confirmed in a dialog invoked if there is an application like Rhytmbox running (and playing).
+There are no notifications sent reminding that the timer is running. If the *Even with unsaved documents* is enabled there is not even a shutdown dialog. But who cares, right? :)
+
+**Solved**: The shutdown does not complete until confirmed in a dialog invoked if there is an application like Rhytmbox running (and playing).
