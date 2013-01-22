@@ -49,7 +49,7 @@ const ShutdownTimerEntry = new Lang.Class({
         }));
         this.menu.addMenuItem(toggle);
 
-        let forceShutdown = new PopupMenu.PopupSwitchMenuItem(_("Even with unsaved documents:"), false);
+        let forceShutdown = new PopupMenu.PopupSwitchMenuItem(_("Even if documents not saved:"), false);
 	forceShutdown.connect("toggled", Lang.bind(this, function(item){
 
         }));
@@ -67,9 +67,9 @@ const ShutdownTimerEntry = new Lang.Class({
         
         // React on toggle-interaction:
         timer.setCallback(function(){
-		if (forceShutdown.state) {
+		if (toggle.state && forceShutdown.state) {
 			shutdown_command.shutdownForced();
-		} else {
+		} else if(toggle.state) {
 			shutdown_command.shutdown();
 		}
         });
