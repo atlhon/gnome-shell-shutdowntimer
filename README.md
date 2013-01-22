@@ -5,6 +5,11 @@ GNOME shell 3.6 extension placing an icon in status area with a simple slider fo
 
 Heavily based on Lukas Knuth's Backslide code at https://bitbucket.org/LukasKnuth/backslide
 
+Installation
+------------
+
+Unzip the archive so that the `shutdowntimer@lusk.cz` folder is in ~/.local/share/gnome-shell/extensions
+
 Known issues
 ------------
 
