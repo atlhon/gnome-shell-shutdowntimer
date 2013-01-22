@@ -1,0 +1,17 @@
+<!--
+    Strings for "type"-attribute: http://developer.gnome.org/glib/2.33/gvariant-format-strings.html
+-->
+<schemalist>
+    <schema id="org.gnome.shell.extensions.shutdowntimer" path="/org/gnome/shell/extensions/shutdowntimer/">
+        <key name="delay" type="i">
+            <default>5</default>
+            <summary>The delay in minutes</summary>
+            <description>The delay in minutes between wallpaper changes.</description>
+        </key>
+        <key name="elapsed-time" type="i">
+            <default>0</default>
+            <summary>Minutes elapsed from the last delay.</summary>
+            <description>The minutes already elapsed from the last delay-interval.</description>
+        </key>
+    </schema>
+</schemalist>

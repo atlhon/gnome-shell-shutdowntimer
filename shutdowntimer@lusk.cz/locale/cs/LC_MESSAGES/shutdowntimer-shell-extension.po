@@ -1,0 +1,42 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: shutdowntimer\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2013-01-20 18:14+0100\n"
+"PO-Revision-Date: 2013-01-20 18:37+0100\n"
+"Last-Translator: Lukas Stancik <lukas.stancik@gmail.com>\n"
+"Language-Team: \n"
+"Language: cs\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=3; plural=(n==1 ? 0 : n%10>=2 && n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
+"X-Poedit-Language: Czech\n"
+"X-Poedit-Country: CZECH REPUBLIC\n"
+"X-Poedit-SourceCharset: utf-8\n"
+
+#: extension.js:41
+msgid "Shutdown timer:"
+msgstr "Časované vypnutí:"
+
+#: extension.js:51
+#: extension.js:71
+#: extension.js:73
+msgid "Delay"
+msgstr "Za"
+
+#: extension.js:53
+#: extension.js:71
+msgid "hours"
+msgstr "hodin"
+
+#: extension.js:54
+#: extension.js:73
+msgid "minutes"
+msgstr "minut"
+
