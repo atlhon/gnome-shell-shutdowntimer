@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2013-01-20 18:14+0100\n"
+"POT-Creation-Date: 2013-01-22 19:48+0100\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -17,18 +17,22 @@ msgstr ""
 "Content-Type: text/plain; charset=CHARSET\n"
 "Content-Transfer-Encoding: 8bit\n"
 
-#: extension.js:41
+#: extension.js:42
 msgid "Shutdown timer:"
 msgstr ""
 
-#: extension.js:51 extension.js:71 extension.js:73
+#: extension.js:52
+msgid "Even with unsaved documents:"
+msgstr ""
+
+#: extension.js:58 extension.js:82 extension.js:84
 msgid "Delay"
 msgstr ""
 
-#: extension.js:53 extension.js:71
+#: extension.js:60 extension.js:82
 msgid "hours"
 msgstr ""
 
-#: extension.js:54 extension.js:73
+#: extension.js:61 extension.js:84
 msgid "minutes"
 msgstr ""

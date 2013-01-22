@@ -49,7 +49,13 @@ const ShutdownTimerEntry = new Lang.Class({
         }));
         this.menu.addMenuItem(toggle);
 
-        let delay_slider_label = new Widget.LabelWidget(_("Delay") + " " +
+        let forceShutdown = new PopupMenu.PopupSwitchMenuItem(_("Even with unsaved documents:"), false);
+	forceShutdown.connect("toggled", Lang.bind(this, function(item){
+
+        }));
+        this.menu.addMenuItem(forceShutdown);
+
+	let delay_slider_label = new Widget.LabelWidget(_("Delay") + " " +
             ((settings.getDelay() > 60)
                 ? Math.floor(settings.getDelay() / 60) + " " + _("hours")
                 : settings.getDelay() + " " + _("minutes"))
@@ -61,7 +67,11 @@ const ShutdownTimerEntry = new Lang.Class({
         
         // React on toggle-interaction:
         timer.setCallback(function(){
-            shutdown_command.run();
+		if (forceShutdown.state) {
+			shutdown_command.shutdownForced();
+		} else {
+			shutdown_command.shutdown();
+		}
         });
 
         // React on delay-change:
