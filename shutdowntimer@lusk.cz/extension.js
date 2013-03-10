@@ -15,6 +15,7 @@ const Convenience = Me.imports.convenience;
 
 const Gettext = imports.gettext.domain('shutdowntimer-shell-extension');
 const _ = Gettext.gettext;
+const ngettext = Gettext.ngettext;
 
 /**
  * The new entry in the gnome3 status-area.
@@ -55,10 +56,13 @@ const ShutdownTimerEntry = new Lang.Class({
         }));
         this.menu.addMenuItem(forceShutdown);
 
+	let hoursSet = Math.floor(settings.getDelay() / 60);
+	let minutesSet = settings.getDelay();
+
 	let delay_slider_label = new Widget.LabelWidget(_("Delay") + " " +
-            ((settings.getDelay() > 60)
-                ? Math.floor(settings.getDelay() / 60) + " " + _("hours")
-                : settings.getDelay() + " " + _("minutes"))
+            ((minutesSet > 60)
+                ? hoursSet + " " + ngettext("hour", "hours", hoursSet).format(hoursSet)
+                : minutesSet + " " + ngettext("minute", "minutes", minutesSet).format(minutesSet))
         );
         this.menu.addMenuItem(delay_slider_label);
         let delay_slider = new Widget.DelaySlider(settings.getDelay() );
@@ -79,9 +83,10 @@ const ShutdownTimerEntry = new Lang.Class({
             settings.setDelay(delay_slider.getMinutes());
             let minutes = delay_slider.getMinutes();
             if (minutes > 60){
-                delay_slider_label.setText(_("Delay") + " " + Math.floor(minutes / 60) + " " + _("hours"));
+		let hours = Math.floor(minutes / 60);
+                delay_slider_label.setText(_("Delay") + " " + hours + " " + ngettext("hour", "hours", hours).format(hours));
             } else {
-                delay_slider_label.setText(_("Delay") + " " + minutes + " " +_("minutes"));
+                delay_slider_label.setText(_("Delay") + " " + minutes + " " + ngettext("minute", "minutes", minutes).format(minutes));
             }
         });
     }
