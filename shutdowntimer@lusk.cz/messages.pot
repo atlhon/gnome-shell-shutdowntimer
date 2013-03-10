@@ -22,7 +22,7 @@ msgid "Shutdown timer:"
 msgstr ""
 
 #: extension.js:52
-msgid "Even with unsaved documents:"
+msgid "Even if documents not saved:"
 msgstr ""
 
 #: extension.js:58 extension.js:82 extension.js:84
