@@ -13,5 +13,10 @@
             <summary>Minutes elapsed from the last delay.</summary>
             <description>The minutes already elapsed from the last delay-interval.</description>
         </key>
+        <key name="forced" type="b">
+            <default>false</default>
+            <summary>Shutdown even if documents not saved.</summary>
+            <description>When enabled there is not even a shutdown dialog.</description>
+        </key>
     </schema>
 </schemalist>

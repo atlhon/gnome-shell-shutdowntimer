@@ -4,6 +4,8 @@ const Me = imports.misc.extensionUtils.getCurrentExtension();
 
 const KEY_DELAY = "delay";
 const KEY_ELAPSED_TIME = "elapsed-time";
+const KEY_FORCED = "forced";
+
 /**
  * This class takes care of reading/writing the settings from/to the GSettings backend.
  * @type {Lang.Class}
@@ -61,7 +63,38 @@ const Settings = new Lang.Class({
     },
 
     /**
-     * Get the delay (in minutes) between the wallpaper-changes.
+     * Get the forced option status
+     * @returns bool
+     */
+    getForced: function(){
+        return this._setting.get_boolean(KEY_FORCED);
+    },
+
+    /**
+     * Set the forced option
+     * @param boolean
+     * @throws TypeError if the given param is not a boolean value
+     */
+    setForced: function(status){
+        // Validate:
+        if (status === undefined || status === null || typeof status !== "boolean"){
+            throw TypeError("status should be a boolean. Got: "+status);
+        }
+        // Set:
+        let key = KEY_FORCED;
+        if (this._setting.is_writable(key)){
+            if (this._setting.set_boolean(key, status)){
+                Gio.Settings.sync();
+            } else {
+                throw this._errorSet(key);
+            }
+        } else {
+            throw this._errorWritable(key);
+        }
+    },
+
+    /**
+     * Get the delay (in minutes) to shutdown.
      * @returns int the delay in minutes.
      */
     getDelay: function(){

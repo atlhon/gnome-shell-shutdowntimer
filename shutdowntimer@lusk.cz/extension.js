@@ -50,9 +50,9 @@ const ShutdownTimerEntry = new Lang.Class({
         }));
         this.menu.addMenuItem(toggle);
 
-        let forceShutdown = new PopupMenu.PopupSwitchMenuItem(_("Even if documents not saved:"), false);
+        let forceShutdown = new PopupMenu.PopupSwitchMenuItem(_("Even if documents not saved:"), settings.getForced());
 	forceShutdown.connect("toggled", Lang.bind(this, function(item){
-
+		settings.setForced(!settings.getForced());
         }));
         this.menu.addMenuItem(forceShutdown);
 
