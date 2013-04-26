@@ -6,7 +6,7 @@
   	"Lukas Stancik"
 	],
   "shell-version": [
-    "3.6"
+    "3.6", "3.8"
   ], 
   "url": "https://github.com/lusk/gnome-shell-shutdowntimer", 
   "uuid": "shutdowntimer@lusk.cz", 
