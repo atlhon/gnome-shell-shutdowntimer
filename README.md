@@ -10,8 +10,8 @@ Installation
 
 Unzip the archive so that the `shutdowntimer@lusk.cz` folder is in ~/.local/share/gnome-shell/extensions
 
-Known issues
+Known "issues"
 ------------
 
 There are no notifications sent reminding that the timer is running.
-If the *Even with unsaved documents* toggle is enabled there is not even a shutdown dialog. But who cares, right? :)
+If the *Even with unsaved documents* toggle is enabled there is not even a shutdown dialog. But who cares, you are already sleeping at that moment, right? :)
