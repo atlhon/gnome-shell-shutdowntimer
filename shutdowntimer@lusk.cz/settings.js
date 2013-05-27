@@ -5,6 +5,7 @@ const Me = imports.misc.extensionUtils.getCurrentExtension();
 const KEY_DELAY = "delay";
 const KEY_ELAPSED_TIME = "elapsed-time";
 const KEY_FORCED = "forced";
+const KEY_ACTION = "action";
 
 /**
  * This class takes care of reading/writing the settings from/to the GSettings backend.
@@ -92,6 +93,37 @@ const Settings = new Lang.Class({
             throw this._errorWritable(key);
         }
     },
+
+    /**
+     * Get the default action to be taken when timer hits.
+     * @returns int action id.
+     */
+    getAction: function(){
+        return this._setting.get_int(KEY_ACTION);
+    },
+
+    /**
+     * Set the preferred action to be taken when timer hits.
+     * @param action id.
+     * @throws TypeError if the given action is not a number or less than 0
+     */
+    setAction: function(action){
+        // Validate:
+        if (action === undefined || action === null || typeof action !== "number" || action < 0){
+            throw TypeError("action should be a number, equal or greater than 0. Got: "+action);
+        }
+        // Set:
+        let key = KEY_ACTION;
+        if (this._setting.is_writable(key)){
+            if (this._setting.set_int(key, action)){
+                Gio.Settings.sync();
+            } else {
+                throw this._errorSet(key);
+            }
+        } else {
+            throw this._errorWritable(key);
+        }
+    },    
 
     /**
      * Get the delay (in minutes) to shutdown.

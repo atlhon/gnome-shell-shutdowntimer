@@ -18,5 +18,10 @@
             <summary>Shutdown even if documents not saved.</summary>
             <description>When enabled there is not even a shutdown dialog.</description>
         </key>
+        <key name="action" type="i">
+            <default>0</default>
+            <summary>Preferred action on timer hit</summary>
+            <description>0 = Shutdown, 1 = Suspend</description>
+        </key>        
     </schema>
 </schemalist>

@@ -2,7 +2,7 @@
   "description": "Shutdown Timer extension based on Lukas Knuth's Backslide code at https://bitbucket.org/LukasKnuth/backslide", 
   "name": "Shutdown Timer", 
   "original-authors": [
-	"Lukas Knuth",
+    "Lukas Knuth",
   	"Lukas Stancik"
 	],
   "shell-version": [
@@ -10,5 +10,5 @@
   ], 
   "url": "https://github.com/lusk/gnome-shell-shutdowntimer", 
   "uuid": "shutdowntimer@lusk.cz", 
-  "version": 2
+  "version": 3
 }
